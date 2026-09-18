@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Lovely Woman ❤️</title>
+  <!-- Confetti Library (Updated to 1.9.3 for emoji support) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #ffe6e8;
+      color: #4a4a4a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 400px;
+      width: 85%;
+    }
+    h1 { color: #e63946; margin-bottom: 0.5rem; }
+    .countdown { font-size: 1.1rem; font-weight: bold; margin: 1.5rem 0; color: #d62828; }
+    button {
+      background-color: #e63946;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
+      margin: 8px 0;
+      width: 100%;
+    }
+    button:hover { background-color: #c1121f; transform: scale(1.02); }
+    .note-box {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      background: #fff0f3;
+      border-radius: 12px;
+      font-style: italic;
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>I Miss You!!!! ❤️</h1>
+    <p>A little space just for us while we're apart</p>
+
+    <!-- Countdown Display -->
+    <div class="countdown" id="timer">Calculating time...</div>
+
+    <!-- Interactive Buttons -->
+    <button onclick="popHearts()">Press Whenever You Miss Me</button>
+    <button onclick="getMemory()">Pull a Love Note / Memory</button>
+
+    <!-- Dynamic Note Display -->
+    <div class="note-box" id="noteDisplay">Click the button above to pull a note!</div>
+  </div>
+
+  <script>
+    // 1. SET YOUR REUNION DATE HERE (YYYY-MM-DDTHH:MM:SS)
+    const targetDate = new Date("2026-10-30T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const diff = targetDate - now;
+
+      if (diff < 0) {
+        document.getElementById("timer").innerText = "We're finally together! 🎉";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s until I see you!`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 2. Dramatic Emoji Explosion (Non-spinning)
+    function popHearts() {
+      const heart = confetti.shapeFromText({ text: '❤️', scalar: 3 });
+      const kiss = confetti.shapeFromText({ text: '💋', scalar: 3 });
+      const flower = confetti.shapeFromText({ text: '😏', scalar: 3 });
+      const sparkle = confetti.shapeFromText({ text: '✨', scalar: 3 });
+      const love = confetti.shapeFromText({ text: '🥰', scalar: 3 });
+      const rose = confetti.shapeFromText({ text: '🌹', scalar: 3 });
+      const emjoi2 = confetti.shapeFromText({ text: '😛', scalar: 3 });
+      const emjoi3 = confetti.shapeFromText({ text: '😉', scalar: 3 });
+      const emjoi4 = confetti.shapeFromText({ text: '😘', scalar: 3 });
+      const emjoi5 = confetti.shapeFromText({ text: '🤓', scalar: 3 });
+      const emjoi6 = confetti.shapeFromText({ text: '😫', scalar: 3 });
+      const emjoi7 = confetti.shapeFromText({ text: '🥺', scalar: 3 });
+      const emjoi8 = confetti.shapeFromText({ text: '🤤', scalar: 3 });
+      const emjoi9 = confetti.shapeFromText({ text: '😈', scalar: 3 });
+      const emjoi10 = confetti.shapeFromText({ text: '🦶', scalar: 3 });
+      const emjoi11 = confetti.shapeFromText({ text: '🫃', scalar: 3 });
+      const emjoi12 = confetti.shapeFromText({ text: '💑', scalar: 3 });
+
+      const emojiShapes = [
+        heart, kiss, flower, sparkle, love, rose, 
+        emjoi2, emjoi3, emjoi4, emjoi5, emjoi6, emjoi7, 
+        emjoi8, emjoi9, emjoi10, emjoi11, emjoi12
+      ];
+
+      // Main Center Blast
+      confetti({
+        particleCount: 150,
+        spread: 120,
+        origin: { y: 0.6 },
+        shapes: emojiShapes,
+        scalar: 3,
+        startVelocity: 70,
+        flat: true
+      });
+
+      // Left Cannon Burst
+      confetti({
+        particleCount: 120,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0, y: 1 },
+        shapes: emojiShapes,
+        scalar: 2.5,
+        startVelocity: 70,
+        flat: true
+      });
+
+      // Right Cannon Burst
+      confetti({
+        particleCount: 120,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1, y: 1 },
+        shapes: emojiShapes,
+        scalar: 2.5,
+        startVelocity: 70,
+        flat: true
+      });
+    }
+
+    // 3. CUSTOMIZE YOUR MEMORIES & NOTES HERE
+    const notes = [
+      "I yearn to fall asleep with you in my arms and I will do everything to be able to do it again ASAP!",
+      "I'm counting down the seconds until I get to hold you again.",
+      "You make every single day better, even from miles away.",
+      "You are loved, appreciated, and deeply missed!",
+      "MWAHHHHHHH I LOVE YOU SO MUCH SWEET GIRL",
+      "Remember when we went to the beach at 3 am and I told you how much I loved you and how you're the only one in the world for me and I asked to marry you one day? I sure do :)",
+      "I will never stop exploring with you.",
+      "I miss getting taco bell and being little fatties together :(",
+      "I miss you every single second of every single day.",
+      "Nothing could ever stop me from loving you",
+      "When I say you are my soulmate, I mean there is no one else in the world I want to spend my life with except you.",
+      "I thank god every single day that I was lucky enough to meet you.",
+      "Everything is better with you. Everything has been better since you :))",
+      "You are every dandelion I've ever blown, every 11:11, every shooting star, every thing I have ever wished for and so much more <3",
+      "You inspre me every single day to be the best version of myself I could possibly be just so I could maybe deserve you",
+      "You are my home.",
+      "Everytime I feel my phone vibrate I hope its you",
+      "You continue to be an inspiration to me",
+      "You are the smartest, most hardworking, most dedicated person I've ever met and I'm so proud of everything you are.",
+      "My family loves you so much and is so grateful for how happy you make me.",
+      "Loving you more natural than breathing.",
+      "You work so hard and I will always be so proud of you.",
+      "Little me would jump up and down with joy if he met you and knew how happy you make me.",
+      "I can't wait to go to ren fairs, drive ins, thift stores, coffee shops, national parks, flea markets, concerts and so much more with you.",
+      "No matter how much time we spend together, I always end up wanting more.",
+      "I promise I will find you in every single lifetime.",
+      "You are the best thing to ever happen to me.",
+      "You will always be all that I could ever possibly want.",
+      "I may not see you everyday, but I love you everyday.",
+      "DUDE I MISS YOU SO MUCH IT HURTS!!",
+      "Are you a parking ticket? Because you've got 'fine' written all over you.",
+      "Do you have a map? Because I just keep getting lost in your eyes.",
+      "If I could rearrange the alphabet, I'd put U and I together.",
+      "Are you a magician? Because whenever I look at you, everyone else disappears.",
+      "You make me penis go SHPOINGOIOING!",
+      "Tie your shoes! I don't want you falling for anyone else.",
+      "Are you a camera? Cuz all I can do is smile when I see you..",
+      "I’m not a photographer, but I can picture me and you together.",
+      "I MISS YOU POOPOO!!",
+      "I was wondering if you had an extra heart. Mine was just stolen.",
+      "There’s only one thing I want to change about you, and that’s your last name.",
+      "It's a rainy friday night, the lights are turned down, were sitting in our cool ass apartment, comfy on our leather couch, wrapped in comfy blankets. The temp is turned down low, all of our work is done, we have dominos on the table, a movie on the TV, and moose is sunggled up with us."
+    ];
+
+    function getMemory() {
+      const randomIndex = Math.floor(Math.random() * notes.length);
+      document.getElementById("noteDisplay").innerText = notes[randomIndex];
+    }
+  </script>
+</body>
+</html>
